@@ -1,3 +1,5 @@
+import { Platform } from "react-native";
+
 const theme = {
   colors: {
     mainBackground: "#e1e4e8",
@@ -10,7 +12,10 @@ const theme = {
     subheading: 14,
   },
   fonts: {
-    main: "System",
+    main: Platform.select({
+      android: "Roboto",
+      ios: "Arial",
+    }),
   },
   fontWeights: {
     normal: "400",
@@ -18,7 +23,7 @@ const theme = {
   },
   flexRowContainer: {
     display: "flex",
-    flexDirection: "row"
+    flexDirection: "row",
   },
   flexColumnContainer: {
     display: "flex",
